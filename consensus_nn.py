@@ -95,7 +95,7 @@ class ConsensusNearestNeighbors():
             # look up image names
             img_names = [self.idx_map[img_idx] for img_idx in img_indices]
             # find corresponding captions
-            captions = {name: ids2caps[img_name_2_img_id(name)] for name in img_names}
+            captions = [ids2caps[img_name_2_img_id(name)] for name in img_names]
             predicted_captions.append(self.consensus_caption(captions))
         return predicted_captions
 
